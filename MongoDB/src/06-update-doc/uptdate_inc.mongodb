@@ -1,0 +1,8 @@
+use("platzi_store")
+//Recibe dos parametros
+db.products.updateOne(
+    {_id:1}, //El identificador que nos permite encontrar el documento
+    {$inc:{
+        price:3000
+}} //El operador este operador incrementa el campo en x cantidad que le demos y el campo sobre el que va a operar
+)

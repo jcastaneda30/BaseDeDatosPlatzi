@@ -1,0 +1,5 @@
+-- Iniciar el docker de mongo db
+docker-compose up -d mongodb
+
+--Checkear si funciona
+docker-compose ps

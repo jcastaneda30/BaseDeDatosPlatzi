@@ -1,0 +1,8 @@
+use("platzi_store")
+//Operador push agrega un elemento a una matriz ya existente
+db.inventory.updateOne({_id:4},
+    {
+        $push:{
+            tags:"headphones"
+        }
+    })

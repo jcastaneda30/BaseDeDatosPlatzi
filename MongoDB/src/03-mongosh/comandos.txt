@@ -1,0 +1,17 @@
+--Acceder a mongosh
+
+docker-compose exec mongodb bash
+
+--Conectar con las base de datos
+mongosh "url base de datos"
+
+ejm
+mongosh "mongodb://root:0000@localhost:27017/?authMechanism=DEFAULT&tls=false"
+
+--Mostrar las bases de datos
+
+show dbs
+
+Las consultas se pueden realizar normal 
+--Salir de una base de datos
+exit 

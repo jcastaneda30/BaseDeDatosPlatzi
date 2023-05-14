@@ -1,0 +1,10 @@
+use("platzi_store")
+//Recibe dos parametros
+db.products.updateOne(
+    {_id:1}, //El identificador que nos permite encontrar el documento
+    {$set:{
+			name:"Metanfetamina",
+			increible:"HAbilidades",
+            tags:["A","B","C"]
+}} //El operador este cambia el valor del campo el que le demos y el campo sobre el que va a operar
+)

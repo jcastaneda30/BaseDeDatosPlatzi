@@ -1,0 +1,3 @@
+use("platzi_store")
+//Trae todos los elementos del collection
+db.products.find()

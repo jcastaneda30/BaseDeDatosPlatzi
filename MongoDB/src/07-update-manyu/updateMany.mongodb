@@ -1,0 +1,8 @@
+use("sample_training")
+//Aqui lo mismo dos parametros
+db.zips.updateMany(
+    {city:"CLEVELAND"},//Parametro para ver cuales son los que cumples la condicion
+    {$inc:{
+        pop:1000
+    }}
+    )

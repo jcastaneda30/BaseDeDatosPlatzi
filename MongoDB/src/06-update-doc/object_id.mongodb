@@ -1,0 +1,9 @@
+use("platzi_store")
+//Recibe dos parametros
+//Para poder cambiar algo que se creo con el id por defecto de mongo se debe usar esa funcion para que sirva
+db.products.updateOne(
+    {_id:ObjectId('64615ba36007477f38156e15')}, //El identificador que nos permite encontrar el documento
+    {$inc:{
+        price:5000
+}} //El operador este cambia el valor del campo el que le demos y el campo sobre el que va a operar
+)

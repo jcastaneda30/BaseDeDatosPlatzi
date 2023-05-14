@@ -1,0 +1,28 @@
+use("sample_training");
+//Aqui lo mismo dos parametros
+// db.zips.updateMany(
+//   { city: "CLEVELAND" }, //Parametro para ver cuales son los que cumples la condicion
+//   {
+//     $set: {
+//       Myatb: "HOla",
+//     },
+//   }
+// );
+//Operador rename para renombrar campos
+// db.zips.updateMany(
+//   { city: "CLEVELAND" }, //Parametro para ver cuales son los que cumples la condicion
+//   {
+//     $rename: {
+//       Myatb: "my_data",
+//     },
+//   }
+// );
+//Operador unset para eliminar atributos
+ db.zips.updateMany(
+   { city: "CLEVELAND" }, //Parametro para ver cuales son los que cumples la condicion
+   {
+     $unset: {
+        my_data: "my_data",
+     },
+   }
+ );
