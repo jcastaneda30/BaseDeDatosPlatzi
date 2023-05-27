@@ -1,0 +1,4 @@
+use("platzi_store")
+//delete one
+//db.products.deleteOne({_id: ObjectId('64615ba36007477f38156e15')})
+db.products.deleteMany({price:2000})

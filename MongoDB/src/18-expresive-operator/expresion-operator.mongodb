@@ -1,0 +1,8 @@
+use("platzi_store")
+db.monthlyBudget.find({spent:{$gte:100}})
+//$expr funciona para comparar valores en el mismo documento
+db.monthlyBudget.find({
+    $expr:{
+        $gt:["$spent","$buget"] //aqui lo que hace es mirar si spent es mas grante que budget
+    }
+})

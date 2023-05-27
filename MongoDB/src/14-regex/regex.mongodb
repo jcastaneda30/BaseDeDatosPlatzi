@@ -1,0 +1,11 @@
+use("platzi_store")
+//Expresiones regulares lo que este entre los slash es lo que busca si se pone
+//i a la derecha no diferencia minusculas de mayusculas
+// db.inventory.find({"item.description":{$regex:/line/}})
+// db.inventory.find({"item.description":{$regex:/LINE/i}})
+//$ es para indicar que el elemento debe terminar en eso
+// db.inventory.find({"item.description":{$regex:/line$/}})
+//^ para indicar que el elemento empiece por algo
+// db.inventory.find({"item.description":{$regex:/^single/i}})
+//La m se utiliza para identificar los \n o sea saltos de linea y aplicar la busqueda sobre estos tambien
+db.inventory.find({"item.description":{$regex:/^s/im}})

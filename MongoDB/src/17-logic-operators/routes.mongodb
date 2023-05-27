@@ -1,0 +1,11 @@
+use("sample_training");
+// db.routes.find({airline:"E70"})
+// db.routes.find({ $or: [{ src_airport:"BOG"}, { dst_airport:"BOG"}] }).count()
+//Esto seria una consulta anidada que or y and
+db.routes.find({
+    $and:[
+        {airplane:"E70"},
+        {$or: [
+            { src_airport:"BOG"}, 
+            { dst_airport:"BOG"}]}
+    ]}).count()

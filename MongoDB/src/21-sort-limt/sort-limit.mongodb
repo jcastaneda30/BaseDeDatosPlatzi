@@ -1,0 +1,7 @@
+use("sample_training")
+//sort recibe el atributo por el cual se va a ordenar 
+//ademas de si es ascendente(1) o descendente(-1)
+db.zips
+    .find({pop: {$gte:50}})
+    .sort({pop:-1})
+    .limit(2)//limit define cuantos se muestran en pantalla

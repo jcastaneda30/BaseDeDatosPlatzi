@@ -1,0 +1,6 @@
+use("sample_training")
+//Busquedas en subdocts
+db.trips.find({
+    "start station location.type":"Point"
+})
+db.companies.find({"relationships.0.person.last_name":"Zuckerberg"})

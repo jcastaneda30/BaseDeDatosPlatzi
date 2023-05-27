@@ -1,0 +1,19 @@
+use("platzi_store")
+db.inventory.find()
+
+//using $gt (>) $gte(>=) esa es la utilidad de estos operadore
+
+// db.inventory.find({qty:{$gt:20}})
+db.inventory.find({qty:{$gte:20}})
+
+//Version menor que less than
+//Using $lt (<) $lte ($lt:20)
+
+db.inventory.find({qty:{$lt:20,}})
+//Intervalos
+db.inventory.find({qty:{$gte:20,$lte:25}})
+//Se pueden poner varios querys
+db.inventory.find({ 
+    "item.name": "ab",
+    qty: { $gte: 15, $lte: 20 }
+    })

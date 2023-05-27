@@ -1,0 +1,24 @@
+use("platzi_store");
+
+//$in se trata de definir valores para un objeto o dentro de un array
+db.inventory.find({ qty: { $in: [20, 25] } }); //esto me devolveria todos los qty que tenga valor de 20 o 25
+//para arrays, trae el objeto que tenga un elemento o el otro del array
+db.inventory.find({ tags: { $in: ["books", "electronics"] } });
+//$nin es lo contrario a $in o sea que trae lo que no tenga lo que indicamos
+db.inventory.find({ qty: { $nin: [20, 25] } });
+//Buscar un array exacot
+db.inventory.find({ tags: ["school", "book"] });
+
+//arrays $all, este busca que el array tenga los elementos indicados sin importar si tiene otro
+db.inventory.find({ tags: { $all: ["school", "book"] } });
+//$size me trae los arrays con n cantidad de elementos
+db.inventory.find({ tags: { $size: 2 } });
+//$elemMatch permite buscar en los documentos dentro de un array
+db.survey.find({
+    results:{//el array
+        $elemMatch:{//para buscar dentro de los elementos del array
+            product:"xyz",
+            score:{$gte:7}
+        }
+    }
+})

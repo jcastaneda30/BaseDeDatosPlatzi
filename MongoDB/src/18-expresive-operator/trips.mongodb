@@ -1,0 +1,8 @@
+use("sample_training")
+//$expr funciona para comparar valores en el mismo documento
+db.trips.find({
+    tripduration:{$gte:1200},
+    $expr:{
+        $eq:["$start station id","$end station id"] //aqui lo que hace es mirar si spent es mas grante que budget
+    }
+})

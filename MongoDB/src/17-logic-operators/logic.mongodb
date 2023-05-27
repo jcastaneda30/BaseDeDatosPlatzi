@@ -1,0 +1,39 @@
+use("sample_training")
+//and de forma implicita
+db.inspections.find({
+    sector:"Tax Preparers - 891",
+    result:"Unable to locate"
+})
+//and de forma explicita
+db.inspections.find({
+    $and:[
+    {sector:"Tax Preparers - 891"},
+    {result:"Unable to locate"}]
+})
+//or 
+//$or:[{},{}] trae los cumplan al menos una de las condiciones
+db.inspections.find({
+    $or:[
+    {sector:"Tax Preparers - 891"},
+    {result:"Unable to locate"}]
+}).count()
+//nor 
+//$nor:[{},{}] trae los que no cumplan ninguna de las condiciones
+db.inspections.find({
+    $nor:[
+    {sector:"Tax Preparers - 891"},
+    {result:"Unable to locate"}]
+}).count()
+//Se puede especificar varios para un mismo atributo
+db.inspections.find({
+    $nor:[
+    {result:"No Violation Issued"},
+    {result:"Unable to locate"}]
+},{//projection
+result:1,
+_id:0
+})
+//$not = {}  se aplica directamente sobre un atributo
+db.inspections.find({
+    result:{$not:{$regex:/Unable to locate/}}
+})

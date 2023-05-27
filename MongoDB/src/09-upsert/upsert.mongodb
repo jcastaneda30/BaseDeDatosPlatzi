@@ -1,0 +1,11 @@
+use("platzi_store")
+db.iot.updateOne({
+    "sensor": "A001",
+    "date": "2022-01-01"
+},{
+    $push:{
+        readings:2323
+    }
+},{
+    upsert:true
+})

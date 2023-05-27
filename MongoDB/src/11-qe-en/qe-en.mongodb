@@ -1,0 +1,30 @@
+use("platzi_store")
+db.inventory.find({"item.name":{$ne:"item ab"}})
+/*
+use("platzi_store")
+
+// usando equal implicitamente
+db.inventory.find({qty: 20})
+
+// usando equal explicitamente
+db.inventory.find({qty: {$eq: 20}})
+
+// usando find en objetos anindados
+//NOTA: siempre que esté la notación . (punto), la clave debe ir en "" (comnnillas)
+db.inventory.find({"item.code": "123"})
+
+// usando no equal, este se usa de forma explícita
+db.inventory.find({qty: {$ne: 20}})
+
+Y podemos utilizarlos para actualizar de forma selectiva ciertos documentos
+
+use("platzi_store")
+
+db.inventory.updateMany(
+    {qty: {$ne: 20}},
+    {
+        $inc: {
+            qty: 10
+        }
+    }
+) */
