@@ -1,0 +1,18 @@
+use("platzi_storeee")
+
+db.users.insertOne({
+    email:'hola@gmail.com',
+    password:'holaaaaaa',
+    role:'admin',
+    social_accounts:['twitter','facebook'],
+    adrress:{
+        street:"xddd",
+        city:"mayorca",
+        zip:10001
+    },
+    shipping_adress:{
+        street:"xddfdafasfd",
+        city:"medellin",
+        zip:1000100
+    }
+})

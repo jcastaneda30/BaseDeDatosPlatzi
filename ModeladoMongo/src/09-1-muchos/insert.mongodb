@@ -1,0 +1,18 @@
+use("platzi_storeee")
+
+db.orders.insertOne({
+    users_id:ObjectId('647408e4501d0e1cb790b1f0'),
+    date:'2020-01-25',
+    items:[
+        {
+            name:'Camise',
+            price:'120',
+            qty:1
+        },
+        {
+            name:'Truenos',
+            price:'500',
+            qty:800
+        }
+    ]
+})

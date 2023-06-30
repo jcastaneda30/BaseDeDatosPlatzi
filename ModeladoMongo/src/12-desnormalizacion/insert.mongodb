@@ -1,0 +1,20 @@
+use("platzi_storeee")
+db.products.find()
+db.orders.insertOne({
+    users_id:ObjectId('647403ae99542f2858e262fb'),
+    date:'2050-01-25',
+    items:[
+        {
+            name:'Uno',
+            price:'200',
+            qty:1,
+            product_id:ObjectId('6475524ac214cadd553591f7')
+        },
+        {
+            name:'6475524ac214cadd553591f8',
+            price:'120',
+            qty:800,
+            product_id:ObjectId('6475524ac214cadd553591f8')
+        }
+    ]
+})

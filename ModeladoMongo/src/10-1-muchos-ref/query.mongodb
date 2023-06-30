@@ -1,0 +1,44 @@
+use("platzi_storeee")
+
+db.users.find({_id:ObjectId('647408e4501d0e1cb790b1f0')})
+
+db.orders.aggregate([
+    {
+      $match: {
+        users_id: ObjectId('647408e4501d0e1cb790b1f0')
+      }
+    },
+    {
+      $lookup: {
+        from: 'users',
+        localField: 'users_id',
+        foreignField: '_id',
+        as: 'user'
+      }
+    },
+    {
+      $unwind: "$user"
+    },
+    {
+      $project: {
+        "user.password": 1  // Agrega el campo "name" de la colección "users"
+        // Agrega todos los campos de la colección "orders"
+      }
+    }
+  ])
+db.orders.aggregate([
+    {
+        $lookup: {
+            pipeline: [
+                {$project: {_id:0,password: 0}},
+            ],
+            from :'users',
+            localField: 'users_id',
+            foreignField: '_id',
+            as: 'detail'
+        }
+    },
+    {
+        $unwind: '$detail'
+    }
+])

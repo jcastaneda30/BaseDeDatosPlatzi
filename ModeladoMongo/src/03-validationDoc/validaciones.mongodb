@@ -1,0 +1,40 @@
+use("platzi_storeee");
+
+db.products.drop();
+
+db.createCollection("products", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["name"],
+      properties: {
+        name: {
+          bsonType: "string",
+        },
+        //Arrays
+        sizes:{
+          bsonType: "array",
+          minItems:1,
+          uniqueItems:true,
+          items:{
+            bsonType:'string'
+          }
+        },
+        //Documentos dentro de documentos
+        categories:{
+          bsonType: 'object',
+          required: ["name"],
+          properties:{
+            name:{
+              bsonType:'string'
+            },
+            image:{
+              bsonType:'string'
+            }
+
+          }
+        }
+      },
+    },
+  },
+});

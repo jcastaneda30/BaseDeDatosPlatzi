@@ -1,0 +1,10 @@
+use("platzi_storeee")
+
+db.products.insertOne({
+    name:'josue',
+    sizes:["m","l","n"],
+    categories:{
+        name:'hola',
+        image:'url'
+    }
+})

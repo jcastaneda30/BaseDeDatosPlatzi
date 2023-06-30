@@ -1,0 +1,3 @@
+use("platzi_storeee")
+
+db.users.find()

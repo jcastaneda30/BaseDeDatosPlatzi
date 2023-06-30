@@ -1,0 +1,17 @@
+use("platzi_storeee")
+db.products.find()
+
+//'6475524ac214cadd553591f9' 'product'
+
+// 647553b676008fc69f17b72e tienda
+
+db.products.updateOne(
+    {_id:ObjectId('6475524ac214cadd553591f9')},
+    {
+        $set:{
+            stores_ids:[
+                ObjectId('647553b676008fc69f17b72e')
+            ]
+        }
+    }
+)

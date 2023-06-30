@@ -1,0 +1,5 @@
+use("platzi_storeee")
+
+db.users.find({
+    "adrress.city": "mayorca"
+})
